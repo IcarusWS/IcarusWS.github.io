@@ -1,37 +1,219 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|Laila');
 
-h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 3em;
+* {
+  margin: 0 auto;
 }
 
-h2 {
-    font-family: 'Open Sans', sans-serif;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    text-align: center;
-    background-color: #fafbfc;
+  background: url("http://www.beautyloft.dk/wp-content/uploads/importedmedia/importedmedia.jpg");
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+hr {
+  margin: 1px 0 12px 0;
+}
+
+#active {
+  color: #2eab7a;
+  border-right: 6px solid #2eab7a;
+  background-color: #37363c;
+}
+
+.section {
+  height: 600px;
+  margin: 8em 20%;
+  background-color: #fafafb;
+  /* Grid setup */
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 65px auto;
+  /* Shadow */
+  box-shadow: 0px 0px 73px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 73px -7px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 73px -7px rgba(0,0,0,0.75);
+  border-radius: 10px;
+}
+
+.logo {
+  width: 200px;
+  text-align: left;
+  background-color: #3b3a3f;
+  color: #D1D2D4;
+/*   transition: width 200ms ease-in-out; */
+  border-top-left-radius: 5px;
+}
+
+.logo h1 {
+  padding: 1rem 0 1rem 2rem;
+}
+
+.hamburger {
+  display: none;
+}
+
+.toolbar {
+  width: calc(100% - 2rem);
+  padding: 1rem 1rem;
+  text-align: left;
+  background-color: #fafafb;
+  color: #555;
+  border-top-right-radius: 5px;
+  border-bottom: 1px solid #aaa;
+  word-break: keep-all;
+}
+
+.leftbar {
+  width: 200px;
+  text-align: left;
+  background-color: #3b3a3f;
+/*   transition: width 200ms ease-in-out; */
+  border-bottom-left-radius: 5px;
+}
+
+.leftbar a {
+  display: block;
+  padding: .85rem 0 .85rem 2rem;
+  color: #d1d2d4;
+}
+
+.leftbar-header {
+  background-color: #353439;
+  display: block;
+  padding: .5rem 0 .5rem 1rem;
+  color: #aaa;
+}
+
+.content {
+  display: block;
+  width: calc(100% - 3rem);
+  padding: 1rem 1.4rem;
+  background-color: #f1f1f2;
+  overflow: auto;
+  border-bottom-right-radius: 5px;
+}
+
+.content > h2 {
+  font-family: 'Laila', sans-serif;
+  color: #555;
+}
+
+/* Scrollbar */
+html ::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+
+html ::-webkit-scrollbar-track {
+  background: #f1f1f2;
+  margin: 5px;
+}
+
+html ::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #385963, #6c9a88);
+  border-radius: 10px;
+}
+
+html ::-webkit-scrollbar-thumb:hover {
+  background: #32545f;
+  border-radius: 10px;
+}
+
+
+/* --------------------------------------------------- Media Query 01: 1200px ----------------------------------------------------- */
+@media only screen and (max-width: 1200px) {
+  .section {
+    height: 100vh;
     margin: 0 auto;
+    background-color: #fafafb;
+    box-shadow: none;
+    border-radius: 10px;
+  }
+  
+  .leftbar,
+  .content,
+  .toolbar,
+  .logo {
+    border-radius: 0;
+  }
 }
 
-section {
-    margin-right: 200px;
-    margin-left: 200px;
-    margin-top: 50px;
-    padding: 20px;
-    background-color: #ffffff;
-    height: 100%;
-    -webkit-box-shadow: 0px 0px 73px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 73px -7px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 73px -7px rgba(0,0,0,0.75);
 
-}
+/* --------------------------------------------------- Media Query 02: 360px ----------------------------------------------------- */
+@media only screen and (max-width: 360px) {
+  .section {
+    grid-template-columns: 4rem calc(100vw - 4rem);
+    grid-template-rows: 65px auto;
+    border-radius: 0;
+  }
+  
+  .logo {
+    width: 4em;
+    border-top-left-radius: 0;
+  }
+  
+  .logo h1 {
+    display: none;
+  }
+  
+  .hamburger {
+    display: inline-block;
+    position: absolute;
+    top: 1.25em;
+    left: 1.25em;
+  }
 
-section ul {
-    list-style: none;
-}
+  .hamburger span {
+    position: relative;
+    width: 28px;
+    height: 4px;
+    background: white;
+    display: block;
+    margin-bottom: 6px;
+    transition: .5s ease;
+  }
 
-section ul li {
-    margin: 10px;
+  .toolbar {
+    border-top-right-radius: 0;
+  }
+  
+  .leftbar {
+    width: 4em;
+    border-bottom-left-radius: 0;
+  }
+  
+  .leftbar > a,
+  .leftbar > p {
+    display: none;
+  }
+  
+  .content {
+    width: calc(100% - 3rem);
+    border-bottom-right-radius: 0;
+  }
+  
+  /* Nav changes */
+  .section.nav-open {
+    grid-template-columns: 200px calc(100vw - 4rem);
+    overflow: hidden;
+  }
+  
+  .section.nav-open > .logo {
+    width: 200px;
+  }
+  
+  .section.nav-open > .leftbar {
+    width: 200px;
+  }
 }

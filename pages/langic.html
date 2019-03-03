@@ -1,0 +1,103 @@
+<div id="active-page">
+
+    <h2>Langic</h2>
+    <hr>
+
+    <p>Langic is a website language manager using the AJAX principle</p>
+    <br>
+    <ul>
+        <li>Change the complete language of a page</li>
+        <li>Change specific objects on the page</li>
+    </ul>
+    <br>
+    <h3>Changes (Version 1.2.0)</h3>
+    <ul>
+        <li>Added langic.setFileExtension and langic.setFilePreExtension</p>
+        </li>
+    </ul>
+    <br>
+    <h3>Installation</h3>
+    <p>Langic requires browsers with ES6 support to run.</p>
+    <p>Clone the repository from Github</p>
+    <br>
+    <h4>Configure</h4>
+    <ol>
+        <li>Place the langic.js (under /lib, not under /src!) file into your scripts folder</li>
+        <li>Create a directory called "languages" in the same directory as your HTML files (You can change the path with
+            langic.setPath([path]))</li>
+        <li>In the languages folder, place your [language].lang.json files</li>
+    </ol>
+    <br>
+    <br>
+    <p><strong>How to format your language</strong></p>
+    <p>Langic files are based on JSON, and require a precise syntax. The entire file consists of Keys and Values, as
+        formatted below:</p>
+    <br>
+    <blockquote>
+        {
+        "[KEY]": "[VALUE]",
+        "[KEY]": "[VALUE]"
+        }
+    </blockquote>
+    <br>
+    <p>The key needs to conform to the ID of an HTML element. For example, say we have the <span id="title"></span>
+        element. Now we want to add language support to that span. To achieve this is quite simple, just add the key
+        "title" with the value of the text in the element (beware that Langic will remove all text currently inside set
+        element, so use spans and divs to avoid problems). The result is:</p>
+    <br>
+    <blockquote>
+        {
+        "title": "Welcome to our website!"
+        }
+    </blockquote>
+    <br>
+    <p>When you change the language of the page to this language, the span with id="title" will have "Welcome to our
+        website" as its content.</p>
+    <br>
+    <p>Save language files as [language_name].lang.json in the languages folder (see Installation)</p>
+    <br>
+    <p>How to use langic.js (Documentation)</p>
+    <p>All langic functionality is stored in the langic object.</p>
+    <br>
+    <p><strong>Change the language of an entire page</strong></p>
+    <p>To change the language of an entire page, use the langic.setLanguage([language]) method, where the language
+        parameter is the language, according to the name of the [language].lang.json file. In this example the file you
+        are requesting is called english.lang.json and is stored in the languages folder.</p>
+    <br>
+    <blockquote>langic.setLanguage('english');</blockquote>
+    <br>
+    <p><strong>Change the language for a specific element (where the ID conforms to the key)</strong></p>
+    <p>To change the language of a specific element, use the langic.setKey([key], [language]), where the [key] parameter
+        is the id of an HTML element AND the key to a language string (they need to be the same), and the language
+        parameter is the language, according to the name of the [language].lang.json file.</p>
+    <br>
+    <p>If the language is not yet loaded using langic.load(), then this method will load a new version.</p>
+    <br>
+    <p>Example:</p>
+    <br>
+    <blockquote>langic.setKey('title', 'english');</blockquote <br>
+    <br>
+    <p><strong>Change the language directory path</strong></p>
+    <p>To change the path of the languages directory, use langic.setPath([path]).enable(), where [path] is the path of
+        the directory For example, say we have a website where the languages are stored in the
+        http://www.example.com/files/languages folder:</p>
+    <br>
+    <blockquote>langic.setPath('/files/languages/');</blockquote>
+    <br>
+    <br>
+    <p><strong>Change the extension</strong></p>
+    <p>Maybe you want to change the extension of your files from .json to something else. If this is the case, use
+        langic.setFileExtension([extension]), where [extension] if the file extension (Including the dot, so: 'json' is
+        wrong and '.json' is correct).</p>
+    <br>
+    <blockquote>langic.setFileExtension('.json');</blockquote>
+    <br>
+    <br>
+    <p><strong>Change the pre-extension</strong></p>
+    <p>If you want to change to .lang to something else, use _langic.setFilePreExtension([pre-extension]), where
+        [pre-extension] is the pre extension (Including the dot, so: 'lang' is wrong and '.lang' is correct))</p>
+    <br>
+    <blockquote>langic.setFilePreExtension('.iclang');</blockquote>
+
+    </p>
+</div>

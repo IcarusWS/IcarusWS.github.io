@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,41 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>IcarusWS Project Page</title>
 </head>
+
 <body>
-    <section>
-        <h1>IcarusWS Project Hub</h1>
-        <h2>Current Projects:</h2>
-        <ul>
-            <li>
-                Daidalos (Current version: 0.0.1)
-            </li>
-            <li>
-                Langic (Current version: 1.1.0) <a href="https://github.com/IcarusWS/langic">GitHub</a>
-            </li>
-            <li>
-                ProjectHub (Current version: 0.1.1) <a href="https://github.com/IcarusWS/IcarusWS.github.io">GitHub</a>
-            </li>
-        </ul>
+    <section class="section">
+        <div class="logo">
+            <h1>IcarusWS</h1>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <h1>Icarus Project Hub</h1>
+        </div>
+
+        <div class="leftbar">
+            <p class="leftbar-header">Projects</p>
+            <a href="#" onclick="clickLangic(event)">Langic</a>
+            <a href="#" onclick="clickDaidalos(event)" id="active">Daidalos</a>
+            <a href="#" onclick="clickPH(event)">ProjectHub</a>
+            <a href="#" onclick="clickWox(event)">WOX</a>
+            <p class="leftbar-header">Links</p>
+            <a target="_blank" href="http://github.com/IcarusWS">Github</a>
+            <a target="_blank" href="https://jessetraas.ostrealyceum.net/px/icarus/index.php">Website</a>
+        </div>
+
+        <div class="content">
+            <div id="daidalos"></div>
+            <div id="langic"></div>
+            <div id="projecthub"></div>
+            <div id="wox"></div>
+        </div>
     </section>
+
+    <script src="scripts/wox.min.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
+
 </html>
