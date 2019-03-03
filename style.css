@@ -134,11 +134,18 @@ html ::-webkit-scrollbar-thumb:hover {
 /* --------------------------------------------------- Media Query 01: 1200px ----------------------------------------------------- */
 @media only screen and (max-width: 1200px) {
   .section {
+    height: calc(100vh - 4em);
+    margin: 2em 5%;
+    border-radius: 10px;
+  }
+}
+
+/* --------------------------------------------------- Media Query 01: 500px ----------------------------------------------------- */
+@media only screen and (max-width: 600px) {
+  .section {
     height: 100vh;
     margin: 0 auto;
-    background-color: #fafafb;
-    box-shadow: none;
-    border-radius: 10px;
+    border-radius: 0;
   }
   
   .leftbar,
@@ -149,9 +156,8 @@ html ::-webkit-scrollbar-thumb:hover {
   }
 }
 
-
 /* --------------------------------------------------- Media Query 02: 360px ----------------------------------------------------- */
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 550px) {  
   .section {
     grid-template-columns: 4rem calc(100vw - 4rem);
     grid-template-rows: 65px auto;
@@ -160,7 +166,6 @@ html ::-webkit-scrollbar-thumb:hover {
   
   .logo {
     width: 4em;
-    border-top-left-radius: 0;
   }
   
   .logo h1 {
@@ -183,14 +188,9 @@ html ::-webkit-scrollbar-thumb:hover {
     margin-bottom: 6px;
     transition: .5s ease;
   }
-
-  .toolbar {
-    border-top-right-radius: 0;
-  }
   
   .leftbar {
     width: 4em;
-    border-bottom-left-radius: 0;
   }
   
   .leftbar > a,
@@ -200,7 +200,7 @@ html ::-webkit-scrollbar-thumb:hover {
   
   .content {
     width: calc(100% - 3rem);
-    border-bottom-right-radius: 0;
+    word-break: break-word;
   }
   
   /* Nav changes */
